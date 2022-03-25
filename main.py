@@ -37,6 +37,11 @@ player_to_words = {
 # This holds the players and points added up
 player_to_points = {}
 
+# this is an example of how to improve the code
+# player_to_points = {player: sum([score_word(word) for word in player_to_words[player]]) for player,
+# words in player_to_words.items()}
+
+
 # this adds all the points of each player
 def update_point_totals():
     for key, value in player_to_words.items():
@@ -55,6 +60,7 @@ update_point_totals()
 def play_word(player, word):
     player_to_points[player] = player_to_points.get(player) + score_word(word)
     return player_to_points
+
 
 # example of added a word
 print(play_word('player1', 'Zebra'))
